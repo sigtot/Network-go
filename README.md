@@ -4,6 +4,27 @@ Network module for Go (UDP broadcast only)
 See [`main.go`](main.go) for usage example. The code is runnable with just `go run main.go`
 
 
+About this fork
+---------------
+
+This fork replaces all local imports with package imports from github so that the packages can be imported from other projects.
+Example import:
+```go
+import (
+	"github.com/sigtot/Network-go/network/bcast"
+	"github.com/sigtot/Network-go/network/localip"
+)
+```
+
+The packages can then be installed with for example `go get github.com/sigtot/Network-go/network/bcast`.
+[dep](https://github.com/golang/dep) should also fetch these automatically and painlessly.
+
+### A small note
+The package `connection` was originally named `conn` but was renamed due to a colliding variable name in the implementation,
+and to avoid _stealing good names from the user_. From [blog.golang.org/package-names](https://blog.golang.org/package-names):
+> Avoid giving a package a name that is commonly used in client code. For example, the buffered I/O package is called bufio, not buf, since buf is a good variable name for a buffer.
+
+
 Features
 --------
 

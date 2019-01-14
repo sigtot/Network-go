@@ -1,9 +1,9 @@
 package bcast
 
 import (
-	"../conn"
 	"encoding/json"
 	"fmt"
+	"github.com/sigtot/Network-go/network/connection"
 	"net"
 	"reflect"
 	"strings"
@@ -29,7 +29,7 @@ func Transmitter(port int, chans ...interface{}) {
 		typeNames[i] = reflect.TypeOf(ch).Elem().String()
 	}
 
-	conn := conn.DialBroadcastUDP(port)
+	conn := connection.DialBroadcastUDP(port)
 	addr, _ := net.ResolveUDPAddr("udp4", fmt.Sprintf("255.255.255.255:%d", port))
 	for {
 		chosen, value, _ := reflect.Select(selectCases)
@@ -44,7 +44,7 @@ func Receiver(port int, chans ...interface{}) {
 	checkArgs(chans...)
 
 	var buf [1024]byte
-	conn := conn.DialBroadcastUDP(port)
+	conn := connection.DialBroadcastUDP(port)
 	for {
 		n, _, _ := conn.ReadFrom(buf[0:])
 		for _, ch := range chans {

@@ -1,11 +1,11 @@
 package main
 
 import (
-	"./network/bcast"
-	"./network/localip"
-	"./network/peers"
 	"flag"
 	"fmt"
+	"github.com/sigtot/Network-go/network/bcast"
+	"github.com/sigtot/Network-go/network/localip"
+	"github.com/sigtot/Network-go/network/peers"
 	"os"
 	"time"
 )

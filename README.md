@@ -1,6 +1,8 @@
 Network module for Go (UDP broadcast only)
 ==========================================
 [![Go Report Card](https://goreportcard.com/badge/github.com/TTK4145/Network-go)](https://goreportcard.com/report/github.com/TTK4145/Network-go)
+[![Go Doc](https://godoc.org/github.com/TTK4145/Network-go?status.svg)](http://godoc.org/github.com/TTK4145/Network-go)
+
 
 See [`main.go`](main.go) for usage example. The code is runnable with just `go run main.go`
 
